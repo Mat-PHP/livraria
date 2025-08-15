@@ -3,6 +3,6 @@ from .views import  AutoresView
 
 urlpatterns = [
     path('autores',AutoresView.as_view()),
-
+    
 
 ]

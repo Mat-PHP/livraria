@@ -35,7 +35,7 @@ class AutoresView(ListCreateAPIView):
     # permission_classes =[IsAuthenticated]
     
     filter_backends = [DjangoFilterBackend, SearchFilter]
-    filterset_fields = ['id', 'autor', 's_autor']      # Permite o filtro exato
+    filterset_fields = ['id']      # Permite o filtro exato
     search_fields = ['autor', 's_autor']               # busca parcial: ?search=Jorge
     filterset_class = AutorFilter                     
     
@@ -50,8 +50,8 @@ class EditorasView(ListCreateAPIView):
     # permission_classes =[IsAuthenticated]
     
     filter_backends = [DjangoFilterBackend, SearchFilter]
-    filterset_fields = ['id', 'nome']
-    search_fields = ['nome']  
+    filterset_fields = ['id']
+    search_fields = ['autor',"s_autor"]  
 
 class EditorasDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Editora.objects.all()

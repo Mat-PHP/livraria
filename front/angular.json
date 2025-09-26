@@ -11,10 +11,8 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/front",
-            "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -28,16 +26,17 @@
             ],
             "styles": [
               "src/styles.css"
-            ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            ]
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/envinroments/envinroments.ts",
+                  "with": "src/envinroments/envinroments.ts"
+                  
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -55,19 +54,13 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/app/environments.ts",
-                  "with": "src/app/environments/environments.ts"
-                }
-              ]
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "front:build:production"
@@ -79,10 +72,10 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
+          "builder": "@angular/build:extract-i18n"
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular/build:karma",
           "options": {
             "polyfills": [
               "zone.js",
@@ -97,14 +90,13 @@
             ],
             "styles": [
               "src/styles.css"
-            ],
-            "scripts": []
+            ]
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": "41924059-67c8-4b9b-a285-76607f7a741c"
+    "analytics": false
   }
 }

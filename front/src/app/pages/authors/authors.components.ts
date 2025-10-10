@@ -7,8 +7,7 @@ import { AuthService } from '../../services/auth.services';
 @Component({
   standalone: true,
   imports: [RouterLink],
-  templateUrl:'./authors.component.html' ,
-  styleUrl: './authors.component.css'
+  templateUrl:'./authors.components.html' ,
 })
 export class AutoresPage {
   private svc = inject(AutoresService);

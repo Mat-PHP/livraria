@@ -6,6 +6,7 @@ from rest_framework.routers import DefaultRouter
 
 router= DefaultRouter()
 router.register(r"imagens", imagemViewSet,basename="imagens")
+router. register(r"livros", LivrosView, basename="Livros")
 
 
 
@@ -26,7 +27,7 @@ urlpatterns = [
     
     path('register/', RegisterView.as_view(), name='register'),
     
-] 
+] + router.urls
 
 urlpatterns +=  router.urls
 

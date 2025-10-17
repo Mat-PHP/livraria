@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environments';
-import { Livro } from '../models/livros';
+import { Livro } from '../models/livro';
 
 export type LivroQuery = {
   search?: string;
@@ -19,8 +19,8 @@ export class LivrosService {
   private api = (environment.apiBase ?? '').replace(/\/+$/, '');
 
   // suas rotas CBV:
-  private baseList = `${this.api}/api/livros/`;   // sem barra final
-  private baseDetail = `${this.api}/api/livro/`;  // singular
+  private baseList = `${this.api}/api/livros`;   // sem barra final
+  private baseDetail = `${this.api}/api/livro`;  // singular
 
   listar(q?: LivroQuery): Observable<Livro[]> {
     let params = new HttpParams();

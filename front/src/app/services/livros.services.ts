@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environments';
-import { Livro } from '../models/livro';
+import { Livro } from '../models/livros';
 
 export type LivroQuery = {
   search?: string;

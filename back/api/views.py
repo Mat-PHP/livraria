@@ -61,7 +61,7 @@ class EditorasDetailView(RetrieveUpdateDestroyAPIView):
     serializer_class = EditoraSerializer
     permission_classes =[IsAuthenticated]
 
-class LivrosView(ModelViewSet):
+class LivrosView(ListCreateAPIView):
     queryset = Livro.objects.all().order_by("-id")
     serializer_class = LivroSerializer
     parser_classes = [MultiPartParser, FormParser]  # aceita multipart

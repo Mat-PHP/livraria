@@ -15,6 +15,6 @@ export const routes: Routes =[
     {path: 'autores',component: AutoresPage,canActivate:[authGuard]},
     {path: 'editoras', component: PublisherComponent,canActivate: [authGuard]},
     {path: 'livros', component: BooksComponent},
-    {path: 'imagem', component: BooksComponent}
+    {path: 'imagem', component: ImagensComponent}
 
 ];

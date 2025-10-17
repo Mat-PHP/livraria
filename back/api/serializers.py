@@ -18,7 +18,6 @@ class EditoraSerializer(serializers.ModelSerializer):
 
 
 class LivroSerializer(serializers.ModelSerializer):
- class LivroSerializer(serializers.ModelSerializer):
     capa_url = serializers.SerializerMethodField()
     
     class Meta:
@@ -32,7 +31,7 @@ class LivroSerializer(serializers.ModelSerializer):
             "isbn", 
             "descricao", 
             "idioma", 
-            "ano_publicacao", 
+            "ano", 
             "paginas", 
             "preco", 
             "estoque", 

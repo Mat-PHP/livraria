@@ -1,4 +1,4 @@
-export interface  Livros{
+export interface Livro {
     id:number
     titulo:string;
     subtitulo?: string|null;
@@ -15,4 +15,6 @@ export interface  Livros{
     disponivel?:string|null,
     dimensoes?:string|null,
     peso?:string|null,
+    capa?: string| null,
+    capa_url?: string| null
 }
